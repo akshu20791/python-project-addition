@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                git url: 'https://github.com/akshu20791/python-project-addition', branch: 'master'
+                git url: 'https://github.com/akshu20791/python-project-addition', branch: 'main'
             }
         }
         stage('Build the project') {
