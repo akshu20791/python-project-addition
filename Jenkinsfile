@@ -7,12 +7,11 @@ pipeline {
               
             }
         }
-    stage('Build the project') {
+      stage('Build the project') {
             steps {
                sh "mvn sudo apt-get update"
                sh "mvn sudo apt-get upgrade"
                sh "mvn sudo apt-get install -y build-essential"
-              sudo apt-get install -y libbz2-dev
             }
         }
     }
