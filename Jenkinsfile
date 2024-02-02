@@ -9,7 +9,6 @@ pipeline {
         stage('Build the project') {
             steps {
                 sh "sudo apt-get update"
-                sh "sudo apt-get upgrade -y"
                 sh "sudo apt-get install -y build-essential"
                 sh "mvn clean install" // assuming Maven is already installed
             }
