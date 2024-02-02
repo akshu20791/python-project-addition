@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh "sudo apt-get update"
                 sh "sudo apt-get install -y build-essential"
-                sh "mvn clean install" // assuming Maven is already installed
+        
             }
         }
     }
