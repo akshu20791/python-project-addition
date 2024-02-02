@@ -1,18 +1,18 @@
 pipeline {
     agent any
-    stages{
-        stage('git cloned'){
-            steps{
-                git url:'https://github.com/akshu20791/python-project-addition', branch: "master"
-              
+    stages {
+        stage('git checkout') {
+            steps {
+                git url: 'https://github.com/akshu20791/python-project-addition', branch: 'master'
             }
         }
-      stage('Build the project') {
+        stage('Build the project') {
             steps {
-               sh "mvn sudo apt-get update"
-               sh "mvn sudo apt-get upgrade"
-               sh "mvn sudo apt-get install -y build-essential"
+                sh "sudo apt-get update"
+                sh "sudo apt-get upgrade -y"
+                sh "sudo apt-get install -y build-essential"
+                sh "mvn clean install" // assuming Maven is already installed
             }
         }
     }
-  
+}
